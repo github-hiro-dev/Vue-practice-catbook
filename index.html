@@ -7,17 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="ok">v-if</div>
-        <div v-show="ok">v-show</div>
-        <div v-if="type==='A'">
-            typeはA
-        </div>
-        <div v-else-if="type==='B'">
-            typeはB
-        </div>
-        <div v-else>
-            どれでもない
-        </div>
+        <ul>
+            <li v-for="(item, index) in list" v-bind:key="item.id" v-bind:class="{tsuyoi: item.hp > 300}">
+                ID.{{item.id}} {{item.name}} HP.{{item.hp}} {{index}}
+                <span v-if="item.hp > 300">強い！</span>
+            </li>
+        </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
