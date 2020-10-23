@@ -7,9 +7,8 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-bind:value="message">
-        <div v-bind:text-content.prop="message"></div>
-        <div v-bind:scroll-top.prop="scroll"></div>
+        <p>{{count}}回押した</p>
+        <button v-on:click="increment">カウントを増やす</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
