@@ -1,11 +1,13 @@
 var app = new Vue({
     el: "#app",
     data: {
-        count:0
-    },
-    methods: {
-        increment:function() {
-            this.count += 1
+        classObject:{
+            child: true,
+            'is-active':true
+        },
+        styleObject: {
+            color: 'red',
+            backgroundColor:'lightgray'
         }
-    }
+    },
 })
