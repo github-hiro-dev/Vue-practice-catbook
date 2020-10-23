@@ -11,5 +11,10 @@ var app = new Vue({
         doRemove: function (index) {
             this.list.splice(index, 1)
         }
+    },
+    created: function () {
+        this.list.forEach(function (item) {
+            this.$set(item, 'active', false)
+        }, this)
     }
 })
