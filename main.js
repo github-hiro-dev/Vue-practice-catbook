@@ -1,10 +1,10 @@
 var app = new Vue({
     el: "#app",
     data: {
-        message: {
-            value:'hello vue.js'
-        },
-        list: ['りんご', 'ばなな', 'いちご'],
-        num:1
+        message: 'hello vue.js',
+        scroll: 0
+    },
+    mounted: function(){
+        this.scroll = 100
     }
 })
