@@ -1,15 +1,15 @@
 var app = new Vue({
     el: "#app",
     data: {
-        list:[
-            {id:1, name:'スライム', hp:100},
-            {id:2, name:'ゴブリン', hp:200},
-            {id:3, name:'ドラゴン', hp:500},
-        ]
+        res:{}
     },
-    methods: {
-        doAttack: function (index) {
-            this.list[index].hp -= 10
-        }
-    },
+    created: function () {
+        axios.get("http://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=my-api-key")
+            .then(function (response) {
+            this.res = response.data
+            }.bind(this))
+            .catch(function (e) {
+            console.error(e)
+        })
+    }
 })
