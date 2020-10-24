@@ -8,13 +8,8 @@ var app = new Vue({
         ]
     },
     methods: {
-        doRemove: function (index) {
-            this.list.splice(index, 1)
+        doAttack: function (index) {
+            this.list[index].hp -= 10
         }
     },
-    created: function () {
-        this.list.forEach(function (item) {
-            this.$set(item, 'active', false)
-        }, this)
-    }
 })
