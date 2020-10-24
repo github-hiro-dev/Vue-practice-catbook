@@ -1,8 +1,7 @@
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 1s;
+img {
+  opacity: 1;
+  transition: opacity 2s;
 }
-.v-enter,
-.v-leave-to {
+img.hide {
   opacity: 0;
 }
