@@ -1,13 +1,23 @@
 var app = new Vue({
     el: "#app",
     data:{
-        preview: ""
+        scrollY: 0,
+        timer: null
+    },
+    created: function () {
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    beforeDestroy: function () {
+        window.removeEventListener('scroll', this.handleScroll)
     },
     methods: {
-        handleChange: function (event) {
-            var file = event.target.files[0]
-            if (file && file.type.match(/^image\/(png|jpeg)$/)) {
-                this.preview = window.URL.createObjectURL(file)
+        handleScroll: function () {
+            if (this.timer === null) {
+                this.timer = setTimeout(function () {
+                    this.scrollY = window.scrollY
+                    clearTimeout(this.timer)
+                    this.timer = null
+                }.bind(this), 200)
             }
         }
     }

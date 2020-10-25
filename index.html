@@ -7,8 +7,7 @@
 </head>
 <body>
     <div id="app">
-        <input type="file" v-on:change="handleChange">
-        <div v-if="preview"><img v-bind:src="preview" alt="something"></div>
+        <header v-bind:class="{compact: scrollY > 200}">200pxより下にスクロールしたら .compactを付与</header>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
