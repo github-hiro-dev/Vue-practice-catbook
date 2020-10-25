@@ -7,7 +7,8 @@
 </head>
 <body>
     <div id="app">
-        <img src="deer-5623012_1920.jpg" alt="deer" v-on:load="show=true" v-bind:class="{hide : !show}">
+        <input v-model="message">
+        <p>{{message}}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
