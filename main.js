@@ -1,17 +1,28 @@
 var app = new Vue({
     el: "#app",
     data:{
-        width: 800,
-        height: 600
-    },
-    methods: {
-        methodData: function () {
-            return Math.random()
-        }
+        budget: 300,
+        limit: 2,
+        list: [
+            {id:1, name:'りんご', price:100},
+            {id:2, name:'ばなな', price:200},
+            {id:3, name:'いちご', price:400},
+            {id:4, name:'おれんじ', price:300},
+            {id:5, name:'めろん', price:500},
+        ],
+        order: false
     },
     computed: {
-        computedData: function () {
-            return Math.random()
+        matched: function () {
+            return this.list.filter(function (el) {
+                return el.price <= this.budget
+            }, this)
+        },
+        sorted: function () {
+            return _.orderBy(this.matched, 'price', this.order ? 'desc' : 'osc')
+        },
+        limited: function () {
+            return this.sorted.slice(0, this.limit)
         }
     }
 })
