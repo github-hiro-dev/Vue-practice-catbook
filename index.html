@@ -7,8 +7,16 @@
 </head>
 <body>
     <div id="app">
-        <input v-model="message">
-        <p>{{message}}</p>
+        <label>
+            <input type="checkbox" name="" id="" v-model="val" value="A">
+        </label>
+        <label>
+            <input type="checkbox" name="" id="" v-model="val" value="B">
+        </label>
+        <label>
+            <input type="checkbox" name="" id="" v-model="val" value="C">
+        </label>
+        <p>{{val}}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
