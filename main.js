@@ -4,18 +4,14 @@ var app = new Vue({
         width: 800,
         height: 600
     },
+    methods: {
+        methodData: function () {
+            return Math.random()
+        }
+    },
     computed: {
-        halfWidth: function () {
-            return this.width / 2
-        },
-        halfHeight: function () {
-            return this.height / 2
-        },
-        halfPoint: function () {
-            return {
-                x: this.halfWidth,
-                y: this.halfHeight
-            }
+        computedData: function () {
+            return Math.random()
         }
     }
 })

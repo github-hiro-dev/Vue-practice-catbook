@@ -7,8 +7,14 @@
 </head>
 <body>
     <div id="app">
-        <p>X: {{halfPoint.x}}</p>
-        <p>Y: {{halfPoint.y}}</p>
+        <ol>
+            <li>{{computedData}}</li>
+            <li>{{computedData}}</li>
+        </ol>
+        <ol>
+            <li>{{methodData()}}</li>
+            <li>{{methodData()}}</li>
+        </ol>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
