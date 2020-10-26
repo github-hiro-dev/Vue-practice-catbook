@@ -7,7 +7,13 @@
 </head>
 <body>
     <div id="app">
-        <p>{{price | localeNum}}</p>
+        <button v-on:click="video1=true">再生</button>
+        <button v-on:click="video1=false">停止</button>
+        <video src="video1.mp4" v-video="video1"></video>
+        <br>
+        <button v-on:click="video2=true">再生</button>
+        <button v-on:click="video2=false">停止</button>
+        <video src="video2.mp4" v-video="video2"></video>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>

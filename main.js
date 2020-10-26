@@ -1,11 +1,14 @@
 var app = new Vue({
     el: "#app",
-    data:{
-        price:19800
+    data: {
+        video1: false,
+        video2: false,
     },
-    filters: {
-        localeNum: function (val) {
-            return val.toLocaleString()
+    directives: {
+        video(el, binding) {
+            if (binding.value !== binding.oldValue) {
+                binding.value ? el.play() : el.pause()
+            }
         }
     }
 })
