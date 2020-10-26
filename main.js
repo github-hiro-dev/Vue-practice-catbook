@@ -1,14 +1,14 @@
 var app = new Vue({
     el: "#app",
     data: {
-        video1: false,
-        video2: false,
+        list:[]
     },
-    directives: {
-        video(el, binding) {
-            if (binding.value !== binding.oldValue) {
-                binding.value ? el.play() : el.pause()
-            }
+    watch: {
+        list: function () {
+            console.log('通常:', this.$refs.list.offsetHeight)
+            this.$nextTick(function () {
+                console.log('nextTick:', this.$refs.list.offsetHeight)
+            })
         }
     }
 })
