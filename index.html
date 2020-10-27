@@ -7,10 +7,8 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="list.push(list.length+1)">追加</button>
-        <ul ref="list">
-            <li v-for="item in list">{{item}}</li>
-        </ul>
+        <my-global-component></my-global-component>
+        <my-local-component></my-local-component>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
