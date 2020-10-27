@@ -1,14 +1,14 @@
-Vue.component('my-global-component', {
-    template:'<p>MyGlobalComponent</p>'
-})
-
-var myLocalComponent = {
-    template: '<p>MyLocalComponent</p>'
+var myComponent = {
+    template: '<p>{{val}}</p>',
+    props:['val']
 }
 
 var app = new Vue({
     el: "#app",
+    data: {
+        message:"Vue"
+    },
     components: {
-        'my-local-component': myLocalComponent
+        'my-component': myComponent
     }
 })

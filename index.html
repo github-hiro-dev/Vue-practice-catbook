@@ -7,8 +7,10 @@
 </head>
 <body>
     <div id="app">
-        <my-global-component></my-global-component>
-        <my-local-component></my-local-component>
+        <input v-model="message">
+        <my-component val="This is child A"></my-component>
+        <my-component val="This is child B"></my-component>
+        <my-component v-bind:val="message"></my-component>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
