@@ -7,10 +7,9 @@
 </head>
 <body>
     <div id="app">
-        <input v-model="message">
-        <my-component val="This is child A"></my-component>
-        <my-component val="This is child B"></my-component>
-        <my-component v-bind:val="message"></my-component>
+        <ul>
+            <my-component v-for="item in list" v-bind:key="item.id" v-bind:name="item.name" v-bind:hp="item.hp"></my-component>
+        </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
