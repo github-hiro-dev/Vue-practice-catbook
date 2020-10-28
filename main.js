@@ -1,31 +1,9 @@
 var myComponent = {
-    template: '<li>{{name}} HP.{{hp}}<button v-on:click="doAttack">攻撃する</button></li>',
-    props: { id: Number, name: String, hp: Number },
-    methods: {
-        doAttack: function() {
-                this.$emit('attack', this.id)
-            }
-    }
+    template: '<section class="my-comp"><header><slot name="header">デフォルトタイトル</slot></header><div class="content"><slot></slot></div><footer><slot name="footer"></slot></footer></section>',
 }
 
 var app = new Vue({
     el: "#app",
-    data: {
-        list:[
-            {id:1, name:'スライム', hp:100},
-            {id:2, name:'ゴブリン', hp:200},
-            {id:3, name:'ドラゴン', hp:500},
-        ]
-    },
-    methods: {
-        handleAttack: function (id) {
-            var item = this.list.find(function (el) {
-                return el.id === id
-            })
-
-            if(item !== undefined && item.hp > 0) item.hp -= 10
-        }
-    },
     components: {
         'my-component': myComponent
     }
