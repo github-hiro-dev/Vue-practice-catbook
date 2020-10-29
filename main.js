@@ -1,36 +1,27 @@
-var mixin = {
-    created: function () {
-        this.hello()
+var compBoard = {
+    template: '<div>Message board</div>',
+}
+
+var compForm = {
+    template: '<div>Form<textarea v-model="message"></textarea></div>',
+    data: function () {
+        return { message: ''}
     },
-    methods: {
-        hello: function () {
-            console.log('hello from mixin!')
-        }
-    }
-}
-
-var myComponentA = {
-    mixins:[mixin],
-    template: '<div class="my-component-a">component A</div>',
-}
-
-var myComponentB = {
-    mixins:[mixin],
-    template: '<div class="my-component-b">component B</div>',
+    activated: function () {
+        console.log('activated!')
+    },
+    deactivated: function () {
+        console.log('deactivated!')
+    },
 }
 
 var app = new Vue({
     el: "#app",
     data: {
-        componentTypes: ['my-component-a', 'my-component-b'],current:0
-    },
-    computed: {
-        component: function () {
-            return this.componentTypes[this.current]
-        }
+        current:'comp-board'
     },
     components: {
-        'my-component-a': myComponentA,
-        'my-component-b': myComponentB,
+        'comp-board': compBoard,
+        'comp-form': compForm,
     }
 })
