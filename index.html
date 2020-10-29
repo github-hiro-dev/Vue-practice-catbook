@@ -7,11 +7,10 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="current='comp-board'">メッセージ一覧</button>
-        <button v-on:click="current='comp-form'">投稿フォーム</button>
-        <keep-alive>
-            <div v-bind:is="current"></div>
-        </keep-alive>
+        <button v-on:click="show=!show">トランジション</button>
+        <transition name="demo" appear>
+            <div v-show="show">トランジションさせたい要素</div>
+        </transition> 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
