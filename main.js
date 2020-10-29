@@ -1,8 +1,21 @@
+var mixin = {
+    created: function () {
+        this.hello()
+    },
+    methods: {
+        hello: function () {
+            console.log('hello from mixin!')
+        }
+    }
+}
+
 var myComponentA = {
+    mixins:[mixin],
     template: '<div class="my-component-a">component A</div>',
 }
 
 var myComponentB = {
+    mixins:[mixin],
     template: '<div class="my-component-b">component B</div>',
 }
 
