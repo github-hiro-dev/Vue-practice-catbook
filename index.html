@@ -17,6 +17,21 @@
             </template>
         </my-component>
     </div>
+
+    <script type="text/x-template" id="my-component">
+        <section class="my-comp">
+            <header>
+                <slot name="header">デフォルトタイトル</slot>
+            </header>
+            <div class="content">
+                <slot></slot>
+            </div>
+            <footer>
+                <slot name="footer"></slot>
+            </footer>
+        </section>
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
