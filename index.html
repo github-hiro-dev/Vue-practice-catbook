@@ -7,10 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="show=!show">トランジション</button>
-        <transition name="demo" appear>
-            <div v-show="show">トランジションさせたい要素</div>
-        </transition> 
+        <button v-on:click="order=!order">切替</button>
+        <transition-group tag="ul" class="list">
+            <li v-for="item in sortedList" v-bind:key="item.id">
+                {{item.name}} {{item.price}}円
+            </li>
+        </transition-group> 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
