@@ -7,12 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="order=!order">切替</button>
-        <transition-group tag="ul" class="list">
-            <li v-for="item in sortedList" v-bind:key="item.id">
-                {{item.name}} {{item.price}}円
-            </li>
-        </transition-group> 
+        <button v-on:click="toggle=!toggle">切替</button>
+        <svg xmls="http://www.w3.org/2000/svg" version="1.1">
+            <transition>
+                <my-circle v-bind:fill="fill" v-bind:key="fill"></my-circle>
+            </transition>
+        </svg>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
