@@ -2,8 +2,8 @@
   <div id="app">
     <div id="nav">
       <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link :to="{ name: 'Product', params: { id: 1 }, query: { a: 2} }" tag="button">商品情報</router-link>
+        <router-link to="/" exact>Home</router-link>
+        <router-link to="/product">商品一覧</router-link>
       </nav>
     </div>
     <router-view/>
@@ -15,7 +15,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
@@ -26,9 +25,10 @@
     font-weight: bold;
     color: #2c3e50;
 
-    &.router-link-exact-active {
+    &.router-link-active {
       color: #42b983;
     }
   }
 }
 </style>
+
