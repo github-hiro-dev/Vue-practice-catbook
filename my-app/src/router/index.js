@@ -6,6 +6,7 @@ import Product from '../views/Product.vue'
 import ProductHome from '../views/ProductHome.vue'
 import ProductReview from '../views/ProductReview.vue'
 import ProductReviewDetail from '../views/ProductReviewDetail.vue'
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -44,6 +45,14 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  store.commit('view/start')
+  next()
+})
+router.afterEach(() => {
+  store.commit('view/end')
 })
 
 export default router

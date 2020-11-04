@@ -14,6 +14,9 @@ import products from '@/api/products.js'
 export default {
     computed: {
         list: () => products.fetch()
+    },
+    beforeRouteEnter(to, from, next){
+        setTimeout(next, 1000)
     }
 }
 </script>

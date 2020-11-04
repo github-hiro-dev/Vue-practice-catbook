@@ -6,9 +6,21 @@
         <router-link to="/product">商品一覧</router-link>
       </nav>
     </div>
-    <router-view/>
+    <transition name="view">
+      <router-view/>
+    </transition>
+    <loading-overlay/>
   </div>
 </template>
+
+<script>
+import LoadingOverlay from '@/components/LoadingOverlay.vue'
+export default {
+  components:{
+    'loading-overlay':LoadingOverlay
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -29,6 +41,16 @@
       color: #42b983;
     }
   }
+}
+
+.view-enter-active, .view-leave-active {
+  transition: opacity 0.5s;
+}
+.view-leave-active {
+  position: absolute;
+}
+.view-enter, .view-leave-to {
+  opacity: 0;
 }
 </style>
 
